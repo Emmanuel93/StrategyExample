@@ -27,6 +27,7 @@ public class Sale {
         this.listOfProducts = listOfProducts;
         this.discounts =  discount;
         calculateSale();
+        applyDiscount();
     }
 
     public void applyDiscount(){

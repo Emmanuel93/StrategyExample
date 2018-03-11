@@ -48,7 +48,6 @@ public class VentaTest {
         DayOfWeek lunes = DayOfWeek.MONDAY;
 
         Sale sale = new Sale(client,productList,miTienda.getDiscountByDayOFWeek(lunes));
-        sale.applyDiscount();
 
         assertEquals(sale.getTotal(),495.9,0.1);
     }
@@ -60,7 +59,6 @@ public class VentaTest {
         DayOfWeek martes = DayOfWeek.TUESDAY;
 
         Sale sale = new Sale(client,productList,miTienda.getDiscountByDayOFWeek(martes));
-        sale.applyDiscount();
 
         assertEquals(sale.getTotal(),495.9,0.1);
 
@@ -73,7 +71,6 @@ public class VentaTest {
         DayOfWeek miercoles = DayOfWeek.WEDNESDAY;
 
         Sale sale = new Sale(client,productList,miTienda.getDiscountByDayOFWeek(miercoles));
-        sale.applyDiscount();
 
         assertEquals(446.3,sale.getTotal(),0.1);
 
@@ -85,7 +82,6 @@ public class VentaTest {
         DayOfWeek jueves = DayOfWeek.THURSDAY;
 
         Sale sale = new Sale(client,productList,miTienda.getDiscountByDayOFWeek(jueves));
-        sale.applyDiscount();
 
         assertEquals(421.51,sale.getTotal(),0.1);
 
@@ -97,7 +93,6 @@ public class VentaTest {
         DayOfWeek viernes = DayOfWeek.FRIDAY;
 
         Sale sale = new Sale(client,productList,miTienda.getDiscountByDayOFWeek(viernes));
-        sale.applyDiscount();
 
         assertEquals(421.51,sale.getTotal(),0.1);
 
@@ -109,7 +104,6 @@ public class VentaTest {
         DayOfWeek sabado = DayOfWeek.SATURDAY;
 
         Sale sale = new Sale(client,productList,miTienda.getDiscountByDayOFWeek(sabado));
-        sale.applyDiscount();
 
         assertEquals(sale.getTotal(),495.9,0.1);
 
@@ -121,7 +115,6 @@ public class VentaTest {
         DayOfWeek martes = DayOfWeek.SUNDAY;
 
         Sale sale = new Sale(client,productList,miTienda.getDiscountByDayOFWeek(martes));
-        sale.applyDiscount();
 
         assertEquals(sale.getTotal(),495.9,0.1);
 

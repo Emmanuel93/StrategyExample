@@ -18,10 +18,10 @@ import java.util.List;
 public class MiTiendita {
 
     public MiTiendita(){
-        Applyventa();
+        ApplyVenta();
     }
 
-    public void Applyventa(){
+    public void ApplyVenta(){
 
         Client client =  new Client("Emmanuel", "TERCERAEDAD");
 
@@ -44,7 +44,6 @@ public class MiTiendita {
         DayOfWeek now = date.getDayOfWeek();
 
         Sale sale = new Sale(client,productList,getDiscountByDayOFWeek(now));
-        sale.applyDiscount();
 
     }
 

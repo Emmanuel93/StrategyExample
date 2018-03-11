@@ -1,6 +1,3 @@
-package Models.Interfaces;
-
-import Models.Sale;
 
 public interface DiscountBehaivor {
 

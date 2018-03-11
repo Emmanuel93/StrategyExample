@@ -1,14 +1,3 @@
-package BussinesRules;
-
-import Models.ConcreteClases.Client;
-import Models.ConcreteClases.Product;
-import Models.Sale;
-import Models.ConcreteClases.SaleDetail;
-import Models.Interfaces.DiscountBehaivor;
-import Models.Stretegies.DairyDiscountStrategy;
-import Models.Stretegies.FruitDiscountStrategy;
-import Models.Stretegies.OldClientDiscountStrategy;
-import Models.Stretegies.SausagesDiscountStrategy;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;

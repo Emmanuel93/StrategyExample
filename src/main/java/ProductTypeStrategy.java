@@ -1,7 +1,3 @@
-package Models.Stretegies;
-
-import AbstractClasses.AbstractDiscount;
-import Models.Sale;
 
 public abstract class ProductTypeStrategy extends AbstractDiscount {
 

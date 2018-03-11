@@ -1,6 +1,4 @@
-package Models.Stretegies;
-
-public class DairyDiscountStrategy extends Models.Stretegies.ProductTypeStrategy {
+public class DairyDiscountStrategy extends ProductTypeStrategy {
 
     public DairyDiscountStrategy(Float discountRate) {
         super(discountRate);

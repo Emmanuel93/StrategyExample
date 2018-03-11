@@ -44,7 +44,6 @@ public class VentaTest {
     @Test
     public void generarVentaLunes(){
 
-        LocalDate date = LocalDate.now();
         DayOfWeek lunes = DayOfWeek.MONDAY;
 
         Sale sale = new Sale(client,productList,miTienda.getDiscountByDayOFWeek(lunes));
@@ -55,7 +54,6 @@ public class VentaTest {
     @Test
     public void generarVentaMartes(){
 
-        LocalDate date = LocalDate.now();
         DayOfWeek martes = DayOfWeek.TUESDAY;
 
         Sale sale = new Sale(client,productList,miTienda.getDiscountByDayOFWeek(martes));
@@ -67,7 +65,6 @@ public class VentaTest {
     @Test
     public void generarVentaMiercoles(){
 
-        LocalDate date = LocalDate.now();
         DayOfWeek miercoles = DayOfWeek.WEDNESDAY;
 
         Sale sale = new Sale(client,productList,miTienda.getDiscountByDayOFWeek(miercoles));
@@ -78,7 +75,6 @@ public class VentaTest {
     @Test
     public void generarVentaJueves(){
 
-        LocalDate date = LocalDate.now();
         DayOfWeek jueves = DayOfWeek.THURSDAY;
 
         Sale sale = new Sale(client,productList,miTienda.getDiscountByDayOFWeek(jueves));
@@ -89,7 +85,6 @@ public class VentaTest {
     @Test
     public void generarVentaViernes(){
 
-        LocalDate date = LocalDate.now();
         DayOfWeek viernes = DayOfWeek.FRIDAY;
 
         Sale sale = new Sale(client,productList,miTienda.getDiscountByDayOFWeek(viernes));
@@ -99,8 +94,6 @@ public class VentaTest {
     }
     @Test
     public void generarVentaSabado(){
-
-        LocalDate date = LocalDate.now();
         DayOfWeek sabado = DayOfWeek.SATURDAY;
 
         Sale sale = new Sale(client,productList,miTienda.getDiscountByDayOFWeek(sabado));
@@ -111,7 +104,6 @@ public class VentaTest {
     @Test
     public void generarVentaDomingo(){
 
-        LocalDate date = LocalDate.now();
         DayOfWeek martes = DayOfWeek.SUNDAY;
 
         Sale sale = new Sale(client,productList,miTienda.getDiscountByDayOFWeek(martes));

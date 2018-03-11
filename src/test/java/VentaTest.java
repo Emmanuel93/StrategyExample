@@ -1,13 +1,11 @@
 import BussinesRules.MiTiendita;
 import Models.ConcreteClases.Client;
 import Models.ConcreteClases.Product;
-import Models.ConcreteClases.Sale;
+import Models.Sale;
 import Models.ConcreteClases.SaleDetail;
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.time.DayOfWeek;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,7 +46,7 @@ public class VentaTest {
 
         Sale sale = new Sale(client,productList,miTienda.getDiscountByDayOFWeek(lunes));
 
-        assertEquals(sale.getTotal(),495.9,0.1);
+        assertEquals(495.9,sale.getTotal(),0.1);
     }
 
     @Test
@@ -58,7 +56,7 @@ public class VentaTest {
 
         Sale sale = new Sale(client,productList,miTienda.getDiscountByDayOFWeek(martes));
 
-        assertEquals(sale.getTotal(),495.9,0.1);
+        assertEquals(495.9,sale.getTotal(),0.1);
 
     }
 
@@ -98,7 +96,7 @@ public class VentaTest {
 
         Sale sale = new Sale(client,productList,miTienda.getDiscountByDayOFWeek(sabado));
 
-        assertEquals(sale.getTotal(),495.9,0.1);
+        assertEquals(495.9,sale.getTotal(),0.1);
 
     }
     @Test
@@ -108,7 +106,7 @@ public class VentaTest {
 
         Sale sale = new Sale(client,productList,miTienda.getDiscountByDayOFWeek(martes));
 
-        assertEquals(sale.getTotal(),495.9,0.1);
+        assertEquals(495.9,sale.getTotal(),0.1);
 
     }
 }

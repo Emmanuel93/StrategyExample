@@ -1,6 +1,6 @@
-package Models.AbstractClasses;
+package AbstractClasses;
 
-import Models.ConcreteClases.Sale;
+import Models.Sale;
 import Models.Interfaces.DiscountBehaivor;
 
 public abstract class AbstractDiscount implements DiscountBehaivor{

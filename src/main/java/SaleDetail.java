@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class SaleDetail {
 
-    private Product product;
+    private Models.ConcreteClases.Product product;
 
     private Float quantity;
 
@@ -13,7 +13,7 @@ public class SaleDetail {
 
     private Float discount;
 
-    public SaleDetail(Product product, Float quantity ){
+    public SaleDetail(Models.ConcreteClases.Product product, Float quantity ){
         this.product = product;
         this.quantity = quantity;
         this.unitaryCost = quantity * product.getPrice();

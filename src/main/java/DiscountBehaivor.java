@@ -1,6 +1,6 @@
 package Models.Interfaces;
 
-import Models.ConcreteClases.Sale;
+import Models.Sale;
 
 public interface DiscountBehaivor {
 

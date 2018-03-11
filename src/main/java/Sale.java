@@ -1,5 +1,6 @@
-package Models.ConcreteClases;
+package Models;
 
+import Models.ConcreteClases.SaleDetail;
 import Models.Interfaces.DiscountBehaivor;
 import lombok.Data;
 
@@ -8,7 +9,7 @@ import java.util.List;
 @Data
 public class Sale {
 
-    private Client client;
+    private Models.ConcreteClases.Client client;
 
     private List<SaleDetail> listOfProducts;
 
@@ -22,7 +23,7 @@ public class Sale {
 
     private List<DiscountBehaivor> discounts;
 
-    public Sale(Client client, List<SaleDetail> listOfProducts, List<DiscountBehaivor> discount){
+    public Sale(Models.ConcreteClases.Client client, List<SaleDetail> listOfProducts, List<DiscountBehaivor> discount){
         this.client = client;
         this.listOfProducts = listOfProducts;
         this.discounts =  discount;

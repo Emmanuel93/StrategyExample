@@ -2,7 +2,7 @@ package BussinesRules;
 
 import Models.ConcreteClases.Client;
 import Models.ConcreteClases.Product;
-import Models.ConcreteClases.Sale;
+import Models.Sale;
 import Models.ConcreteClases.SaleDetail;
 import Models.Interfaces.DiscountBehaivor;
 import Models.Stretegies.DairyDiscountStrategy;

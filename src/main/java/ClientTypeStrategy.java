@@ -6,10 +6,11 @@ public abstract class ClientTypeStrategy extends AbstractDiscount{
     }
 
     @Override
-    public void applyDiscount(Sale sale) {
-        Float discount = sale.getTotal() * this.discountRate;
+    public void applyDiscount(Discountable discountable) {
+        Sale sale = (Sale)discountable;
+        Float discount = sale.getTotal() * (this.discountRate/100);
         sale.setDiscount(discount);
-        sale.calculateSale();
+        sale.setTotal(sale.getTotal()-discount);
 
     }
 }

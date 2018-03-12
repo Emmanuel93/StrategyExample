@@ -1,5 +1,5 @@
 
 public interface DiscountBehaivor {
 
-    public void applyDiscount(Sale sale);
+    public void applyDiscount(Discountable sale);
 }

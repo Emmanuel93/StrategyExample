@@ -7,6 +7,6 @@ public abstract class AbstractDiscount implements DiscountBehaivor{
         this.discountRate = discountRate;
     }
 
-    public abstract void applyDiscount(Sale sale);
+    public abstract void applyDiscount(Discountable sale);
 
 }

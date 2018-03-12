@@ -22,39 +22,73 @@ public class MiTiendita {
         Product platano = new Product("1kg platano macho",12.5F,"FRUTAS");
         Product manzana = new Product("1kg manzanas",32.5F,"FRUTAS");
 
+
+        //(30*10)+(25.5*.5)+(.25*15.9)+(60*.5)+(12.5*1)+(2*32.5)
+        //((30*10)+(25.5*.5)+(.25*15.9)+(60*.5)+(12.5*1)+(2*32.5))*1.16
+
         productList.add(new SaleDetail(leche,10F));
-        productList.add(new SaleDetail(leche,0.5F));
-        productList.add(new SaleDetail(leche,0.25F));
-        productList.add(new SaleDetail(leche,0.5F));
-        productList.add(new SaleDetail(leche,1.0F));
-        productList.add(new SaleDetail(leche,2.0F));
+        productList.add(new SaleDetail(crema,0.5F));
+        productList.add(new SaleDetail(mantequilla,0.25F));
+        productList.add(new SaleDetail(queso,0.5F));
+        productList.add(new SaleDetail(platano,1.0F));
+        productList.add(new SaleDetail(manzana,2.0F));
 
         LocalDate date = LocalDate.now();
-        DayOfWeek now = date.getDayOfWeek();
+        DayOfWeek now = DayOfWeek.FRIDAY;
 
-        Sale sale = new Sale(client,productList,getDiscountByDayOFWeek(now));
+        Sale sale = new Sale(client,productList,getDiscountByDayOFWeek(client,now,productList));
 
     }
 
-    public static List<DiscountBehaivor> getDiscountByDayOFWeek(DayOfWeek now){
-        ArrayList<DiscountBehaivor> discounts = new ArrayList<>();
+    public static List<ClientTypeStrategy> getDiscountByDayOFWeek(Client client, DayOfWeek now,
+                                                                List<SaleDetail> products){
+        ArrayList<ClientTypeStrategy> discounts = new ArrayList<>();
 
         switch (now.getValue()){
             case 1:
-                discounts.add(new OldClientDiscountStrategy(5F));
+                if(client.getType().equals("TERCERAEDAD"))
+                    discounts.add(new OldClientDiscountStrategy(5F));
                 break;
             case 3:
-                discounts.add(new DairyDiscountStrategy(10F));
+                products.stream()
+                        .forEach( product -> {
+                            ArrayList<ProductTypeStrategy> discountsP = new ArrayList<>();
+
+                            if(product.getProduct().getType().equals("LACTEO")){
+                                discountsP.add(new DairyDiscountStrategy(10F));
+                            }
+                            product.setDiscountB( discountsP );
+                        });
                 break;
             case 4:
-                discounts.add(new FruitDiscountStrategy(15F));
+                products.stream()
+                        .forEach( product -> {
+                            ArrayList<ProductTypeStrategy> discountsP = new ArrayList<>();
+
+                            if(product.getProduct().getType().equals("FRUTAS")){
+                                discountsP.add(new FruitDiscountStrategy(15F));
+                            }
+                            product.setDiscountB( discountsP );
+                        });
                 break;
             case 5:
-                discounts.add(new SausagesDiscountStrategy(5F));
-                discounts.add(new DairyDiscountStrategy(15F));
+                products.stream()
+                        .forEach( product -> {
+                            ArrayList<ProductTypeStrategy> discountsP = new ArrayList<>();
+
+                            if(product.getProduct().getType().equals("LACTEO")){
+                                discountsP.add(new DairyDiscountStrategy(15F));
+                            }
+
+                            if (product.getProduct().getType().equals("EMBUTIDO")){
+                                discountsP.add(new SausagesDiscountStrategy(5F));
+                            }
+                            product.setDiscountB( discountsP );
+                        });
                 break;
             case 7:
-                discounts.add(new OldClientDiscountStrategy(5F));
+                if(client.getType().equals("TERCERAEDAD"))
+                    discounts.add(new OldClientDiscountStrategy(5F));
             default:
                 break;
         }

@@ -6,19 +6,11 @@ public abstract class ProductTypeStrategy extends AbstractDiscount {
     }
 
     @Override
-    public void applyDiscount(Sale sale) {
-        sale.getListOfProducts()
-                    .stream()
-                    .forEach(saleDetail ->{
-                        Float price = saleDetail.getProduct().getPrice();
-                        Float quantity = saleDetail.getQuantity();
-                        Float unitaryCost = price*quantity;
-                        Float discount = unitaryCost * (this.discountRate/100);
-                        saleDetail.setDiscount(discount);
-                        Float total = unitaryCost-discount;
-                        saleDetail.setUnitaryCost(total);
-                    } );
+    public void applyDiscount(Discountable discountable) {
+        SaleDetail product = (SaleDetail)discountable;
+        Float discount = product.getUnitaryCost() * (this.discountRate/100);
+        product.setDiscount(discount);
+        product.setUnitaryCost(product.getUnitaryCost() - discount);
 
-        sale.calculateSale();
     }
 }

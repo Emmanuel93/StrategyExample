@@ -1,4 +1,4 @@
-import BussinesRules.MiTiendita;
+import bussinesrules.MiTiendita;
 
 public class Main {
 

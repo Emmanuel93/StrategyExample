@@ -1,4 +1,4 @@
-package Models.Stretegies;
+package Models.strategies;
 
 public class FruitDiscountStrategy extends ProductTypeStrategy {
 

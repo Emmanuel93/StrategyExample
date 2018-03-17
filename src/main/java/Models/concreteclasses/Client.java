@@ -1,4 +1,4 @@
-package Models.ConcreteClases;
+package Models.concreteclasses;
 
 import lombok.Data;
 

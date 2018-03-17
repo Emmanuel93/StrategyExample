@@ -1,3 +1,4 @@
+package Models.interfaces;
 
 public interface DiscountBehaivor {
 

@@ -1,3 +1,5 @@
+package Models.strategies;
+
 ;
 
 public class OldClientDiscountStrategy extends ClientTypeStrategy {

@@ -1,3 +1,7 @@
+package Models.concreteclasses;
+
+import Models.interfaces.Discountable;
+import Models.strategies.ClientTypeStrategy;
 import lombok.Data;
 
 import java.util.List;
@@ -20,10 +24,12 @@ public class Sale implements Discountable {
 
     private List<ClientTypeStrategy> discounts;
 
-    public Sale(Client client, List<SaleDetail> listOfProducts, List<ClientTypeStrategy> discount){
+    public Sale(Client client, List<SaleDetail> listOfProducts){
         this.client = client;
         this.listOfProducts = listOfProducts;
-        this.discounts =  discount;
+    }
+
+    public void calculateTotalOfSale(){
         applyDiscountOfProduct();
         calculateSale();
         applyDiscountOfSale();

@@ -1,5 +1,9 @@
+package Models.abstractclasses;
 
-public abstract class AbstractDiscount implements DiscountBehaivor{
+import Models.interfaces.DiscountBehaivor;
+import Models.interfaces.Discountable;
+
+public abstract class AbstractDiscount implements DiscountBehaivor {
 
     protected Float discountRate;
 

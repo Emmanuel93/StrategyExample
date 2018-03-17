@@ -1,3 +1,8 @@
+package Models.strategies;
+
+import Models.abstractclasses.AbstractDiscount;
+import Models.concreteclasses.SaleDetail;
+import Models.interfaces.Discountable;
 
 public abstract class ProductTypeStrategy extends AbstractDiscount {
 

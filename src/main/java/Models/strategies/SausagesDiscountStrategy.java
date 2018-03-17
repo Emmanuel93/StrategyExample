@@ -1,3 +1,4 @@
+package Models.strategies;
 
 public class SausagesDiscountStrategy extends ProductTypeStrategy {
 

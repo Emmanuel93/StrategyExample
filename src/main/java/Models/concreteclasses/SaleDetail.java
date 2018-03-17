@@ -1,4 +1,7 @@
+package Models.concreteclasses;
 
+import Models.interfaces.Discountable;
+import Models.strategies.ProductTypeStrategy;
 import lombok.Data;
 
 import java.util.ArrayList;

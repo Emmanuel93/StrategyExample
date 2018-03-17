@@ -1,3 +1,4 @@
+package Models.concreteclasses;
 
 import lombok.Data;
 

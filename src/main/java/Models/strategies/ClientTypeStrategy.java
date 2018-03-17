@@ -1,5 +1,10 @@
+package Models.strategies;
 
-public abstract class ClientTypeStrategy extends AbstractDiscount{
+import Models.abstractclasses.AbstractDiscount;
+import Models.concreteclasses.Sale;
+import Models.interfaces.Discountable;
+
+public abstract class ClientTypeStrategy extends AbstractDiscount {
 
     protected ClientTypeStrategy(Float discountRate) {
         super(discountRate);
